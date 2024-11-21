@@ -18,7 +18,7 @@ conda create -n CLIPer python=3.9
 conda activate CLIPer
 pip install -r requirement.txt
 ```
-##Data Preparation
+## Data Preparation
 Please struct the datasets as follows
 ```none
 datasets
@@ -75,11 +75,11 @@ sh sh_ovs.sh ../scripts/config/vit-l-14/ovs_voc20.yaml
 ## Results
 Run the code in this repo, you should get similar results (reported in paper are shown in the parentheses) in the following table:
 
-| Encoder | VOC  |Context|Object |VOC20 |Contex59 |Stuff |ADE |
-|  :----:  |  :----:  |  :----:  |  :----:  |  :----:  |  :----:  |  :----:  |  :----:  |
-| ViT-B/16 | - |- | - | - | - | - |- |
-| ViT-L/14 | 70.2(69.8) |38.2(38.0) | - |  90.0(90.0) | 43.6(43.6) | - | - |
-| ViT-H/14 | - |- | - |  - | - | - | - |
+| Encoder | VOC  |Context|   Object   |VOC20 |Contex59 |Stuff |ADE |
+|  :----:  |  :----:  |  :----:  |:----------:|  :----:  |  :----:  |  :----:  |  :----:  |
+| ViT-B/16 | - |- |     -      | - | - | - |- |
+| ViT-L/14 | 70.2(69.8) |38.2(38.0) | 43.3(43.5) |  90.0(90.0) | 43.6(43.6) | - | - |
+| ViT-H/14 | - |- |     -      |  - | - | - | - |
 
 ## Visualization
 <img width="100%" src="assets/visualization.png">
