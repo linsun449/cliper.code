@@ -75,11 +75,11 @@ sh sh_ovs.sh ../scripts/config/vit-l-14/ovs_voc20.yaml
 ## Results
 Run the code in this repo, you should get similar results (reported in paper are shown in the parentheses) in the following table:
 
-| Encoder | VOC  |Context|   Object   |VOC20 |Contex59 |Stuff |ADE |
-|  :----:  |  :----:  |  :----:  |:----------:|  :----:  |  :----:  |  :----:  |  :----:  |
-| ViT-B/16 | - |- |     -      | - | - | - |- |
-| ViT-L/14 | 70.2(69.8) |38.2(38.0) | 43.3(43.5) |  90.0(90.0) | 43.6(43.6) | - | - |
-| ViT-H/14 | - |- |     -      |  - | - | - | - |
+| Encoder | VOC  |Context|Object |VOC20 |Contex59 |Stuff |ADE |
+|  :----:  |  :----:  |  :----:  |  :----:  |  :----:  |  :----:  |  :----:  |  :----:  |
+| ViT-B/16 | 65.9(65.9) |37.6(37.6) | 39.3(39.0) | 85.4(85.2) | 41.7(41.7) | 27.5(27.5) |21.4(21.4) |
+| ViT-L/14 | 70.2(69.8) |38.2(38.0) | 43.5(43.3) |  90.0(90.0) | 43.6(43.6) | 29.2(28.7) | 24.4(24.4) |
+| ViT-H/14 | 71.0 | 39.7 | 43.2 | 88.9 | 44.3 | 30.7 | 27.5 |
 
 ## Visualization
 <img width="100%" src="assets/visualization.png">
