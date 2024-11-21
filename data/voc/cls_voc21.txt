@@ -1,0 +1,21 @@
+ground, land, grass, tree, building, wall, sky, lake, water, river, sea, railway, railroad, keyboard, helmet, cloud, house, mountain, ocean, road, rock, street, valley, bridge, sign
+aeroplane
+bicycle
+bird avian
+boat
+bottle
+bus
+car
+cat
+chair seat
+cow
+diningtable
+dog
+horse
+motorbike
+person with clothes, people, human
+pottedplant
+sheep
+sofa
+train
+tvmonitor screen
