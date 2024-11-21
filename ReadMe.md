@@ -81,5 +81,8 @@ Run the code in this repo, you should get similar results (reported in paper are
 | ViT-L/14 | 70.2(69.8) |38.2(38.0) | - |  90.0(90.0) | 43.6(43.6) | - | - |
 | ViT-H/14 | - |- | - |  - | - | - | - |
 
+## Visualization
+<img width="100%" src="assets/visualization.png">
+
 ## Citation
 TODO
