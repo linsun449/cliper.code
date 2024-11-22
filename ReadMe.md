@@ -85,4 +85,14 @@ Run the code in this repo, you should get similar results (reported in paper are
 <img width="100%" src="assets/visualization.png">
 
 ## Citation
-TODO
+```
+@misc{Sun_2024_CLIPer,
+      title={CLIPer: Hierarchically Improving Spatial Representation of CLIP for Open-Vocabulary Semantic Segmentation}, 
+      author={Lin Sun and Jiale Cao and Jin Xie and Xiaoheng Jiang and Yanwei Pang},
+      year={2024},
+      eprint={2411.13836},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2411.13836}, 
+}
+```
