@@ -1,0 +1,16 @@
+model_name: "ViT-L/14"
+
+semantic_templates: "template/car_template.txt"
+
+attention_layers_to_use: [-4, -6]
+sd_version: v2.1
+time_step: 45
+
+refinement: SFSA
+attn_type: fused-attn
+fuse_feature: True
+size: 336
+
+logit_scale: 50
+score_threshold: 0
+bkg_thre: 0

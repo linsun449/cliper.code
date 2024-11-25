@@ -1,0 +1,17 @@
+dataset_name: "context"
+model_name: "ViT-L/14"
+
+semantic_templates: "../template/openai_template.txt"
+
+label_dir: "/Storage/personal/sunlin/datasets/VOCdevkit/VOC2010/SegmentationClassContext"
+voc12_root: "/Storage/personal/sunlin/datasets/VOCdevkit/VOC2010"
+img_name_list_path: "../data/voc/context_val.txt"
+
+attention_layers_to_use: [-4, -6]
+
+logit_scale: 50
+score_threshold: 0.3
+bkg_thre: 0.3
+is_normalize: False
+
+ignore_labels: [255]

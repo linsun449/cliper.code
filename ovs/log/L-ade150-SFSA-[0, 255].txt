@@ -1,0 +1,44 @@
+2024-11-21 19:06:13,249 - dataset_name: ade150
+model_name: ViT-L/14
+ade_root: /Storage/personal/sunlin/datasets/ADEChallengeData2016
+used_dir: validation
+img_name_list_path: ../data/ade/ade_val.txt
+attention_layers_to_use: [-4, -6]
+logit_scale: 50
+score_threshold: 0.2
+bkg_thre: 0.2
+is_normalize: False
+ignore_labels: [0, 255]
+fuse_feature: True
+refinement: SFSA
+attention_idx: 1
+attn_type: fused-attn
+time_step: 45
+sd_version: v2.1
+size: 336
+log_path: log
+
+2024-11-21 19:14:17,438 - consumption time:384.5090684890747
+2024-11-21 19:14:17,685 - mIou:0.24318757352955497
+2024-11-21 19:14:46,540 - dataset_name: ade150
+model_name: ViT-L/14
+ade_root: /Storage/personal/sunlin/datasets/ADEChallengeData2016
+used_dir: validation
+img_name_list_path: ../data/ade/ade_val.txt
+attention_layers_to_use: [-4, -6]
+logit_scale: 50
+score_threshold: 0.2
+bkg_thre: 0.2
+is_normalize: False
+ignore_labels: [0, 255]
+fuse_feature: True
+refinement: SFSA
+attention_idx: 1
+attn_type: fused-attn
+time_step: 45
+sd_version: v2.1
+size: 336
+log_path: log
+
+2024-11-21 19:22:18,564 - consumption time:385.47273540496826
+2024-11-21 19:22:18,670 - mIou:0.2402254945601294

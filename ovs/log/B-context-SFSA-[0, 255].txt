@@ -1,0 +1,46 @@
+2024-11-21 21:42:49,453 - dataset_name: context
+model_name: ViT-B/16
+semantic_templates: ../template/car_template.txt
+label_dir: /Storage/personal/sunlin/datasets/VOCdevkit/VOC2010/SegmentationClassContext
+voc12_root: /Storage/personal/sunlin/datasets/VOCdevkit/VOC2010
+img_name_list_path: ../data/voc/context_val.txt
+attention_layers_to_use: [-4, -6]
+logit_scale: 100
+score_threshold: 0.3
+bkg_thre: 0.3
+is_normalize: False
+ignore_labels: [0, 255]
+fuse_feature: True
+refinement: SFSA
+attention_idx: 1
+attn_type: fused-attn
+time_step: 45
+sd_version: v2.1
+size: 336
+log_path: log
+
+2024-11-21 21:58:00,404 - consumption time:830.7775211334229
+2024-11-21 21:58:00,980 - mIou:0.4170215696779868
+2024-11-21 21:58:37,805 - dataset_name: context
+model_name: ViT-B/16
+semantic_templates: ../template/openai_template.txt
+label_dir: /Storage/personal/sunlin/datasets/VOCdevkit/VOC2010/SegmentationClassContext
+voc12_root: /Storage/personal/sunlin/datasets/VOCdevkit/VOC2010
+img_name_list_path: ../data/voc/context_val.txt
+attention_layers_to_use: [-4, -6]
+logit_scale: 100
+score_threshold: 0.3
+bkg_thre: 0.3
+is_normalize: False
+ignore_labels: [0, 255]
+fuse_feature: True
+refinement: SFSA
+attention_idx: 1
+attn_type: fused-attn
+time_step: 45
+sd_version: v2.1
+size: 336
+log_path: log
+
+2024-11-21 22:13:24,445 - consumption time:814.7920341491699
+2024-11-21 22:13:24,736 - mIou:0.4093624899266927

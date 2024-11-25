@@ -1,0 +1,23 @@
+
+2024-11-21 15:33:12,458 - dataset_name: context
+model_name: ViT-L/14
+label_dir: /Storage/personal/sunlin/datasets/VOCdevkit/VOC2010/SegmentationClassContext
+voc12_root: /Storage/personal/sunlin/datasets/VOCdevkit/VOC2010
+img_name_list_path: ../data/voc/context_val.txt
+attention_layers_to_use: [-4, -6]
+logit_scale: 50
+score_threshold: 0.3
+bkg_thre: 0.3
+is_normalize: False
+ignore_labels: [255]
+fuse_feature: True
+refinement: SFSA
+attention_idx: 1
+attn_type: fused-attn
+time_step: 45
+sd_version: v2.1
+size: 336
+log_path: log
+
+2024-11-21 15:51:46,768 - consumption time:1023.3783185482025
+2024-11-21 15:51:46,915 - mIou:0.3821619570600302

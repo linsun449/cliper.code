@@ -1,0 +1,17 @@
+dataset_name: "coco_stuff164"
+model_name: "ViT-L/14"
+
+semantic_templates: "../template/openai_template.txt"
+
+coco_root: "/Storage/personal/sunlin/datasets/coco2017"
+used_dir: "val2017"
+img_name_list_path: "../data/coco14/coco_stuff164.txt"
+
+attention_layers_to_use: [-4, -6]
+
+logit_scale: 50
+score_threshold: 0.2
+bkg_thre: 0.2
+is_normalize: False
+
+ignore_labels: [0, 255]

@@ -1,0 +1,23 @@
+2024-11-21 20:04:27,838 - dataset_name: coco5k
+model_name: ViT-B/16
+semantic_templates: ../template/openai_template.txt
+coco_root: /Storage/personal/sunlin/datasets/coco2014
+used_dir: val2014
+img_name_list_path: ../data/coco14/val_5k.txt
+attention_layers_to_use: [-4, -6]
+logit_scale: 50
+score_threshold: 0.3
+bkg_thre: 0.3
+is_normalize: False
+ignore_labels: [255]
+fuse_feature: True
+refinement: SFSA
+attention_idx: 1
+attn_type: fused-attn
+time_step: 45
+sd_version: v2.1
+size: 336
+log_path: log
+
+2024-11-21 20:20:36,371 - consumption time:812.4750509262085
+2024-11-21 20:20:36,650 - mIou:0.3931721204258831
