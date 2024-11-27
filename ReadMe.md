@@ -2,6 +2,9 @@
 
 This repo is the official pytorch implementation of the  [CLIPer](https://arxiv.org/abs/2411.13836)
 
+## :fire: News
+- We have released the sourse code of CLIPer (all the model needed will be downloaded automatically when running the code).
+
 ## Introduction
 <img width="100%" src="assets/00framework.png">
 
@@ -9,7 +12,7 @@ This repo is the official pytorch implementation of the  [CLIPer](https://arxiv.
 - We further introduce  the fine-grained compensation, utilizing the detailed spacial information in the self-attention maps of Stable Diffusion to obtain the precise segmentation results.
 - The proposed CLIPer achieve the state-of-the-art performance on multiple datasets in open-vocabulary semantic segmentation tasks. our proposed CLIPer obtains mIoU scores of 69.8% on VOC and 43.3% on Object when using ViT-L/14 backbone.
 
-For further details, please check out our [paper]().
+For further details, please check out our [paper](https://arxiv.org/abs/2411.13836).
 
 ## Installation
 Please follow the code bellow to create the environment
