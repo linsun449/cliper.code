@@ -1,9 +1,9 @@
 # CLIPer: Hierarchically Improving Spatial Representation of CLIP for Open-Vocabulary Semantic Segmentation
 
-This repo is the official pytorch implementation of the  [CLIPer](https://arxiv.org/abs/2411.13836)
+This repo is the official pytorch implementation of the  [CLIPer](https://arxiv.org/abs/2411.13836).
 
 ## :fire: News
-- We have released the sourse code of CLIPer (all the model needed will be downloaded automatically when running the code).
+- We have released the sourse code of CLIPer (all the models needed will be downloaded automatically when running the code).
 
 ## Introduction
 <img width="100%" src="assets/00framework.png">
