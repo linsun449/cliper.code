@@ -10,11 +10,11 @@ from util.tools import load_yaml
 import torch.nn.functional as F
 
 image_files = {
-    "assets/natural_house.jpg": ["house;sky;grass;wall", "", 0.3, 0.5],
-    "assets/natural_giraffe.jpg": ["giraffe;grass;sky", "", 0.25, 0.5],
-    "assets/painting_bicycle.jpg": ["bicycle;door;flower", "", 0.7, 0.5],
+    "assets/natural_house.jpg": ["house;sky;grass;wall", "", 0.4, 0.5],
+    "assets/natural_dog.jpg": ["dog;sod;chair", "", 0.55, 0.5],
+    "assets/painting_bicycle.jpg": ["bicycle;door;flower", "", 0.75, 0.5],
     "assets/clipart_dragon.jpg": ["dragon;princess;armour man", "", 0.5, 0.5],
-    "assets/sketch_fence.jpg": ["fence;grass;tree;mountain", "", 0.5, 0.5],
+    "assets/sketch_fence.jpg": ["fence;grass;tree;mountain", "", 0.4, 0.5],
 }
 
 PALETTE = np.array([[0, 0, 0], [128, 0, 0], [0, 128, 0], [128, 128, 0],
