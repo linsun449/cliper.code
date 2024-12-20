@@ -10,10 +10,10 @@ from modified_clip.open_model import OpenCLIPer
 
 
 class Pipeline(nn.Module):
-    def __init__(self, cfg):
+    def __init__(self, cfg, device=torch.device("cuda:0" if torch.cuda.is_available() else "cpu")):
         super().__init__()
         self.cliper, self.attn_refine = None, None
-        self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+        self.device = device
         if cfg.model_name in ["ViT-B/16", "ViT-L/14"]:
             self.cliper = CLIPer(model_name=cfg.model_name, logit_scale=cfg.logit_scale, attn_type=cfg.attn_type,
                                  fuse_feature=cfg.fuse_feature, size=cfg.size, device=self.device)
@@ -25,8 +25,8 @@ class Pipeline(nn.Module):
 
         if hasattr(cfg, "refinement") and cfg.refinement in ["SFSA", "mean", "selection"]:
             self.attn_refine = diffusion(attention_layers_to_use=cfg.attention_layers_to_use,
-                                         model=cfg.sd_version, time_step=cfg.time_step,
-                                         device=self.device, dtype=torch.float16)
+                                         model=cfg.sd_version, time_step=cfg.time_step, device=self.device,
+                                         dtype=torch.float16 if "cuda" in str(self.device) else torch.float32)
 
         self.cfg = cfg
 

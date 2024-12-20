@@ -27,7 +27,7 @@ PALETTE = np.array([[0, 0, 0], [128, 0, 0], [0, 128, 0], [128, 128, 0],
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 cfg = load_yaml("scripts/config/app.yaml")
 cfg.semantic_templates = [line.strip() for line in list(open(cfg.semantic_templates))]
-CLIPer = Pipeline(cfg)
+CLIPer = Pipeline(cfg, device=device)
 embedding = torch.load("embeddings_large14.pth", map_location=device)
 print(cfg, CLIPer.attn_refine)
 

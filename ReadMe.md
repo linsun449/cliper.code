@@ -2,7 +2,13 @@
 
 This repo is the official pytorch implementation of the  [CLIPer](https://arxiv.org/abs/2411.13836).
 
+[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/sunlin449/CLIPer)
+[![Leaderboard](https://img.shields.io/badge/ModelScope-Space%20with%20GPU-orange)](https://modelscope.cn/studios/sunlin449/CLIPer/)
+[![Leaderboard](https://img.shields.io/badge/ModelScope-Model-green)](https://modelscope.cn/models/sunlin449/CLIPer)
+
 ## :fire: News
+- We have released a gradio demo, where you can find it in [huggingface](https://huggingface.co/spaces/sunlin449/CLIPer) with CPU 
+and [ModelScape](https://modelscope.cn/studios/sunlin449/CLIPer/) with GPU or in you device by running ```app.py```.
 - We have released the sourse code of CLIPer (all the models needed will be downloaded automatically when running the code).
 
 ## Introduction
