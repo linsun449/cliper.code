@@ -54,9 +54,9 @@ class ShowSegmentResult:
 
     def calculate(self):
         acc = np.diag(self.hist).sum() / self.hist.sum()
-        _acc_cls = np.diag(self.hist) / self.hist.sum(axis=1)
+        _acc_cls = np.diag(self.hist) / (self.hist.sum(axis=1) + 1e-5)
         acc_cls = np.nanmean(_acc_cls)
-        iu = np.diag(self.hist) / (self.hist.sum(axis=1) + self.hist.sum(axis=0) - np.diag(self.hist))
+        iu = np.diag(self.hist) / (self.hist.sum(axis=1) + self.hist.sum(axis=0) - np.diag(self.hist) + 1e-5)
         valid = self.hist.sum(axis=1) > 0
         mean_iu = np.nanmean(iu[valid])
         cls_iu = dict(zip(range(self.num_classes), iu))

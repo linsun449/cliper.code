@@ -29,7 +29,9 @@ class diffusion(nn.Module):
             model = "CompVis/stable-diffusion-v1-4"
         else:
             raise ValueError(f"Not supported model {model}")
-        self.model = StableDiffusionPipeline.from_pretrained(model, torch_dtype=dtype)
+        self.model = StableDiffusionPipeline.from_pretrained(model, torch_dtype=dtype,
+                                                             cache_dir="/data/cache/v2_1",
+                                                             local_files_only=True)
         self.setup(device)
         self.dtype = dtype
         self.time_step = time_step

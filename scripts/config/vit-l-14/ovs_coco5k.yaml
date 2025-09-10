@@ -3,11 +3,16 @@ model_name: "ViT-L/14"
 
 semantic_templates: "../template/openai_template.txt"
 
-coco_root: "/Storage/personal/sunlin/datasets/coco2014"
+coco_root: "/data/datasets/coco2014"
 used_dir: "val2014"
 img_name_list_path: "../data/coco14/val_5k.txt"
 
 attention_layers_to_use: [-4, -6]
+attention_thr: 0.1
+
+size: 336  # the shorter size used of the image
+
+select_layer: -2
 
 logit_scale: 50
 score_threshold: 0.5
@@ -15,3 +20,11 @@ bkg_thre: 0.5
 is_normalize: False
 
 ignore_labels: [255]
+
+# testing without sliding window
+sliding_crop_size: 0 # mIoU: 44.4(40.4)
+
+# testing with sliding window
+# sliding_crop_size: 224 # mIoU: 44.7(41.4)
+#score_threshold: 0.4
+#bkg_thre: 0.4

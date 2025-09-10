@@ -7,6 +7,9 @@ This repo is the official pytorch implementation of the  [CLIPer](https://arxiv.
 [![Leaderboard](https://img.shields.io/badge/ModelScope-Model-green)](https://modelscope.cn/models/sunlin449/CLIPer)
 
 ## :fire: News
+- We have incorporated a sliding window method into the code.
+- A multi-GPU version has been released (by  running ```sh_ovs_mgp.sh```), along with new results on several widely adopted benchmark datasets.
+- We are pleased to announce that this work has been accepted by ICCV 2025.
 - We have released a gradio demo, and you can find it in [huggingface](https://huggingface.co/spaces/sunlin449/CLIPer) with CPU 
 and [ModelScape](https://modelscope.cn/studios/sunlin449/CLIPer/) with GPU or in you device by running ```app.py```.
 - We have released the sourse code of CLIPer (all the models needed will be downloaded automatically when running the code).
@@ -25,7 +28,7 @@ Please follow the code bellow to create the environment
 ```
 conda create -n CLIPer python=3.9
 conda activate CLIPer
-pip install -r requirement.txt
+pip install -r requirements.txt
 ```
 ## Data Preparation
 Please struct the datasets as follows
@@ -42,6 +45,25 @@ datasets
 │   │   │   ├── ADE_train_00000001.png
 │   │   ├── validation
 │   │   │   ├── ADE_val_00000001.png
+├── CityScapes
+│   ├── gtFine
+│   │   ├── train
+│   │   ├── test
+│   │   ├── val
+│   │   │   ├── frankfurt
+│   │   │   │   ├── frankfurt_000000_000294_gtFine_labelTrainIds.png
+│   │   │   │   ├── ...
+│   │   │   ├── lindau
+│   │   │   ├── munster
+├── ├── leftImg8bit
+│   │   ├── train
+│   │   ├── test
+│   │   ├── val
+│   │   │   ├── frankfurt
+│   │   │   │   ├── frankfurt_000000_000294_leftImg8bit.png
+│   │   │   │   ├── ...
+│   │   │   ├── lindau
+│   │   │   ├── munster
 ├── coco2014
 │   ├── train2014
 │   │   ├── COCO_train2014_000000000009.jpg
@@ -82,13 +104,14 @@ sh sh_ovs.sh ../scripts/config/vit-l-14/ovs_voc20.yaml
 # ...
 ```
 ## Results
-Run the code in this repo, you should get similar results (reported in paper are shown in the parentheses) in the following table:
+Run the code in this repo, you should get similar results (* means using sliding widow, and values in parentheses indicate results obtained without applying FGC) in the following table:
 
-| Encoder | VOC  |Context|Object |VOC20 |Contex59 |Stuff |ADE |
-|  :----:  |  :----:  |  :----:  |  :----:  |  :----:  |  :----:  |  :----:  |  :----:  |
-| ViT-B/16 | 65.9(65.9) |37.6(37.6) | 39.3(39.0) | 85.4(85.2) | 41.7(41.7) | 27.5(27.5) |21.4(21.4) |
-| ViT-L/14 | 70.2(69.8) |38.2(38.0) | 43.5(43.3) |  90.0(90.0) | 43.6(43.6) | 29.2(28.7) | 24.4(24.4) |
-| ViT-H/14 | 71.0 | 39.7 | 43.2 | 88.9 | 44.3 | 30.7 | 27.5 |
+| Encoder  | VOC  |Context|Object |VOC20 |Contex59 |Stuff |ADE |CITY |
+|  :----:  |  :----:  |  :----:  |  :----:  |  :----:  |  :----:  |  :----:  |  :----:  |  :----:  |
+| ViT-B/16 | 66.4(60.7) |37.5(34.7) | 39.2(36.3) | 85.5(84.3) | 41.6(38.4) | 27.6(25.4) | 21.5(19.8) | 37.0(35.9) |
+| ViT-B/16* | 66.5(62.1) |38.3(35.7) | 40.0(37.5) | 86.0(85.0) | 42.4(39.6) | 28.6(26.4) | 22.0(20.6) | 38.7(38.3) |
+| ViT-B/16 | 71.6(62.5) |39.0(34.8) | 44.4(40.4) | 90.3(88.7) | 44.0(39.6) | 29.7(26.3) | 24.5(22.1) | 41.6(37.9) |
+| ViT-B/16* | 72.2(64.0) |39.5(35.7) | 44.7(41.4) | 89.8(89.0) | 44.6(40.9) | 30.4(27.1) | 25.0(22.9) | 42.5(39.4) |
 
 ## Visualization
 <img width="100%" src="assets/visualization.png">

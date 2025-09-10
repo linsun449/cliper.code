@@ -1,5 +1,5 @@
 dataset_name: "voc21"
-model_name: "ViT-B/16"
+model_name: "ViT-H/14"
 
 semantic_templates: "../template/car_template.txt"
 
@@ -12,7 +12,7 @@ attention_thr: 0.1
 
 size: 336  # the shorter size used of the image
 
-select_layer: -1
+select_layer: -2
 
 logit_scale: 100
 score_threshold: 0.7
@@ -22,6 +22,6 @@ is_normalize: True
 ignore_labels: [255]
 
 # testing without sliding window
-#sliding_crop_size: 0   # mIoU 66.4(60.7)
+sliding_crop_size: 0   # mIoU 71.6(62.5)
 # testing with sliding window
-sliding_crop_size: 336  # mIoU:66.5(62.1)
+#sliding_crop_size: 336  # mIoU:72.2(64.0)

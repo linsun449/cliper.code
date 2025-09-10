@@ -26,7 +26,8 @@ cfg.semantic_templates = [line.strip() for line in list(open(cfg.semantic_templa
 if hasattr(cfg, "save_path"):
     os.makedirs(cfg.save_path, exist_ok=True)
 
-pipe = Pipeline(cfg)
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+pipe = Pipeline(cfg, device)
 
 dataset, bg_text_features, fg_text_features = load_dataset(cfg, pipe.cliper)
 dataloader = DataLoader(dataset, batch_size=1, shuffle=False, num_workers=0)
@@ -36,7 +37,6 @@ util_iou = ShowSegmentResult(num_classes=dataset.category_number + 1, ignore_lab
 consumption_time = 0
 for i, (ori_img, img, mask, label, name) in tqdm(enumerate(dataloader), total=len(dataloader), desc="Processing image"):
     ori_height, ori_width = mask.shape[1], mask.shape[2]
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     img, fg_text_features, bg_text_features = img.to(device), fg_text_features.to(device), bg_text_features.to(device)
 
     torch.cuda.synchronize()

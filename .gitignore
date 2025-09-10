@@ -1,0 +1,4 @@
+*.pyc
+**/__pycache__
+ovs/log
+ovs/outputs/lightning_logs/**/hparams.yaml

@@ -3,11 +3,16 @@ model_name: "ViT-B/16"
 
 semantic_templates: "../template/car_template.txt"
 
-coco_root: "/Storage/personal/sunlin/datasets/coco2017"
+coco_root: "/data/datasets/coco2017"
 used_dir: "val2017"
 img_name_list_path: "../data/coco14/coco_stuff164.txt"
 
 attention_layers_to_use: [-4, -6]
+attention_thr: 0.2
+
+size: 336  # the shorter size used of the image
+
+select_layer: -1
 
 logit_scale: 50
 score_threshold: 0.1
@@ -15,3 +20,8 @@ bkg_thre: 0.1
 is_normalize: False
 
 ignore_labels: [0, 255]
+
+# testing without sliding window
+sliding_crop_size: 0  # mIoU: 27.6(25.4)
+# testing with sliding window
+#sliding_crop_size: 224  # mIoU: 28.6(26.4)

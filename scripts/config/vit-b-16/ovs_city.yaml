@@ -1,0 +1,26 @@
+dataset_name: "cityscapes"
+model_name: "ViT-B/16"
+
+semantic_templates: "../template/openai_template.txt"
+
+city_root: "/data/datasets/CityScapes"
+used_dir: "val"
+img_name_list_path: "../data/cityscapes/city_val.txt"
+
+attention_layers_to_use: [-4, -6]
+attention_thr: 0.35
+
+size: 560  # the shorter size used of the image
+select_layer: -1
+
+logit_scale: 100
+score_threshold: 0
+bkg_thre: 0.0001
+is_normalize: False
+
+ignore_labels: [0, 255]
+
+# testing without sliding window
+sliding_crop_size: 0  # mIoU 37.0(35.9)
+# testing with sliding window
+#sliding_crop_size: 224 #mIoU 38.7(38.3)

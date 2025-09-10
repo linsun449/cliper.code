@@ -1,4 +1,5 @@
 from data.ade.ade_datasets import ADESegDataset
+from data.cityscapes.city_datasets import CitySegDataset
 from data.coco14.coco_datasets import COCOSegDataset, COCOStuffSegDataset
 from data.voc.voc_datasets import VOC12SegmentationDataset
 
@@ -38,6 +39,13 @@ def load_dataset(cfg, model):
                                 ade_root=cfg.ade_root,
                                 used_dir=cfg.used_dir,
                                 img_transform=model.preprocess)
+        bg_text_features = model.classifier(dataset.background, cfg.semantic_templates)
+        fg_text_features = model.classifier(dataset.categories, cfg.semantic_templates)
+    elif cfg.dataset_name == "cityscapes":
+        dataset = CitySegDataset(img_name_list_path=cfg.img_name_list_path,
+                                 city_root=cfg.city_root,
+                                 used_dir=cfg.used_dir,
+                                 img_transform=model.preprocess)
         bg_text_features = model.classifier(dataset.background, cfg.semantic_templates)
         fg_text_features = model.classifier(dataset.categories, cfg.semantic_templates)
     else:

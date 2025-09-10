@@ -14,3 +14,5 @@ size: 336
 logit_scale: 50
 score_threshold: 0
 bkg_thre: 0
+
+sliding_window: False

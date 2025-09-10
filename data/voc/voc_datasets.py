@@ -86,7 +86,7 @@ class VOC12SegmentationDataset(Dataset):
         img = Image.open(get_img_path(name_str, self.voc_root))
         mask = Image.open(os.path.join(self.label_dir, name_str + '.png'))
 
-        ori_img = torch.tensor(np.array(img.convert('RGB'))).permute(2, 0, 1) / 255.
+        ori_img = torch.from_numpy(np.array(img.convert('RGB'))).float().permute(2, 0, 1) / 255.
         if self.img_transform is not None:
             img = self.img_transform(img)
 

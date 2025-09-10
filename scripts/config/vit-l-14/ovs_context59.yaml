@@ -3,14 +3,25 @@ model_name: "ViT-L/14"
 
 semantic_templates: "../template/car_template.txt"
 
-label_dir: "/Storage/personal/sunlin/datasets/VOCdevkit/VOC2010/SegmentationClassContext"
-voc12_root: "/Storage/personal/sunlin/datasets/VOCdevkit/VOC2010"
+label_dir: "/data/datasets/VOCdevkit/VOC2010/SegmentationClassContext"
+voc12_root: "/data/datasets/VOCdevkit/VOC2010"
 img_name_list_path: "../data/voc/context_val.txt"
 
 attention_layers_to_use: [-4, -6]
+attention_thr: 0.2
+
+size: 336  # the shorter size used of the image
+
+select_layer: -2
+
 logit_scale: 100
 score_threshold: 0.45
 bkg_thre: 0.45
 is_normalize: False
 
 ignore_labels: [0, 255]
+
+# testing without sliding window
+sliding_crop_size: 0 # mIoU: 44.0(39.6)
+# testing with sliding window
+#sliding_crop_size: 224 # mIoU: 44.6(40.9)
