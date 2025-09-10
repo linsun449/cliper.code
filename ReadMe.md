@@ -1,4 +1,4 @@
-# CLIPer: Hierarchically Improving Spatial Representation of CLIP for Open-Vocabulary Semantic Segmentation
+# CLIPer: Hierarchically Improving Spatial Representation of CLIP for Open-Vocabulary Semantic Segmentation (ICCV 2025)
 
 This repo is the official pytorch implementation of the  [CLIPer](https://arxiv.org/abs/2411.13836).
 
